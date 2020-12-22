@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-content">
+    <p class="title">Login</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" formControlName="email" />
+        </div>
+        <p
+          class="help is-danger"
+          *ngIf="isControlHasError('email', 'required')"
+        >
+          *Requerido
+        </p>
+        <p class="help is-danger" *ngIf="isControlHasError('email', 'email')">
+          *Email invalido
+        </p>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input" formControlName="password" type="password" />
+        </div>
+        <p
+          class="help is-danger"
+          *ngIf="isControlHasError('password', 'required')"
+        >
+          *Requerido
+        </p>
+      </div>
+      <button class="button is-primary" type="submit">Login</button>
+    </form>
+  </div>
+  <footer class="card-footer">
+    <p class="card-footer-item">
+      <span>
+        By <a href="https://www.instagram.com/henrygbcdev/">HenryGBC</a>
+      </span>
+    </p>
+    <p class="card-footer-item">
+      <span> By <a href="https://twitter.com/HenryGBC">HenryGBC</a> </span>
+    </p>
+  </footer>
+</div>
